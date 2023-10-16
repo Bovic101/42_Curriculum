@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 01:00:39 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/16 03:53:22 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/17 01:14:36 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 size_t	ft_strlen(const char *s);
+void	ft_memset(void *s, int c, size_t length);
 
 int	main(void)
 {
-	int	result;
+	char	temp[20];
 
-	result = ft_strlen("victor");
-	printf("Print the value: %d\n", result);
+	ft_memset(temp, 'z', 10);
+	ft_memset(temp + 5, 'y', 10);
+	printf("value: %s\n", temp);
 	return (0);
 }
