@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 01:00:39 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/17 01:14:36 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/17 01:32:13 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	main(void)
 {
 	char	temp[20];
 
-	ft_memset(temp, 'z', 10);
-	ft_memset(temp + 5, 'y', 10);
+	ft_memset(temp, 'a', sizeof(char) * 10);
+	ft_memset(temp + 10, 'z', sizeof(char) * 10);
 	printf("value: %s\n", temp);
 	return (0);
 }
