@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 04:05:01 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/17 01:36:48 by vodebunm         ###   ########.fr       */
+/*   Created: 2023/10/25 02:33:41 by vodebunm          #+#    #+#             */
+/*   Updated: 2023/10/25 02:34:39 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
 
 // This function is used to assign a specific value to a memory block
 void	*ft_memset(void *s, int c, size_t length)

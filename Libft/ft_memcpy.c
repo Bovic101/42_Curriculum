@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 01:36:22 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/25 02:21:41 by vodebunm         ###   ########.fr       */
+/*   Created: 2023/10/25 02:44:44 by vodebunm          #+#    #+#             */
+/*   Updated: 2023/10/25 17:33:46 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// erases byte in the memory locations and start them to zero
-void	ft_bzero(void *s, size_t n)
+// Copy a block of memory from the source location to destination location
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	ft_memset(s, 0, n);
+	char		*d;
+	const char	*s;
+
+	if (!dest || !src)
+	{
+		return (dest);
+	}
+	d = dest;
+	s = src;
+	while (n)
+	{
+		*d = *s;
+		d++;
+		s++;
+		n--;
+	}
+	return (dest);
 }
