@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 01:00:39 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/25 02:14:48 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/25 21:42:34 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,14 @@ int		ft_tolower(int c);
 size_t	ft_strlen(const char *s);
 void	ft_memset(void *s, int c, size_t length);
 void	ft_bzero(void *s, size_t n);
-**/
-int	main(void)
-{
-	int	result[3] = {25, 30, 35};
+char	*ft_strchr(const char *s, int c);**/
 
-	int i = 0;
-	while (i < 3)
-	{
-		ft_bzero(result, sizeof(result));
-		printf("%d\n", result[i]);
-		i++;
-		
-	}
-	return (0);
+
+int main(void)
+{
+	char name[] = "BOLA";
+	char search = 'L';
+	char result =*ft_strchr(name, search);
+	printf("%s\n", *result);
+	return(0);
 }
