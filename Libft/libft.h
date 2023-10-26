@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 02:10:25 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/25 21:37:38 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/26 13:54:36 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void				*ft_memset(void *s, int c, size_t length);
 void				ft_bzero(void *s, size_t n);
 char				*ft_strchr(const char *s, int c);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
+char				*ft_strrchr(const char *s, int c);
 #endif
