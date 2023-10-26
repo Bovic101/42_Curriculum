@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 02:10:25 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/26 15:51:34 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:00:01 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -39,4 +33,5 @@ char				*ft_strchr(const char *s, int c);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2, size_t n);
+
 #endif
