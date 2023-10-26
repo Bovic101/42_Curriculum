@@ -6,16 +6,16 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:56:23 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/26 15:40:44 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:53:25 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // Function to compare two strings
-int	ft_strcmp(const *s1, const *s2, size_t n)
+int	ft_strcmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if ((!s1 || !s2) && !n)
@@ -26,11 +26,9 @@ int	ft_strcmp(const *s1, const *s2, size_t n)
 	{
 		if (s1[i] != s2[i])
 		{
-			return((unsigned char)s1[i] - (unsigned char)s2[i]);
-			
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		}
 		i++;
-		
 	}
-	return(0);
+	return (0);
 }
