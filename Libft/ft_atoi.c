@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:35:30 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/27 22:30:52 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/27 23:42:22 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_atoi(const char *str)
 	result = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] == ' ' || str[i] >= 9 && str[i] <= 13)
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
 	}
@@ -31,7 +31,7 @@ int	ft_atoi(const char *str)
 		sign = -1;
 		i++;
 	}
-	while (str[i] != '\0')
+	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
 	{
 		result = result * 10 + str[i] - '0';
 		i++;
