@@ -6,11 +6,12 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 01:00:39 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/25 21:42:34 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/27 23:19:19 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /**#include <string.h>
 
 int		ft_isalpha(int c);
@@ -25,12 +26,12 @@ void	ft_memset(void *s, int c, size_t length);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strchr(const char *s, int c);**/
 
-
-int main(void)
+int	main(void)
 {
-	char name[] = "BOLA";
-	char search = 'L';
-	char result =*ft_strchr(name, search);
-	printf("%s\n", *result);
-	return(0);
+	char	name[] = "-1234";
+	int		val;
+
+	val = ft_atoi(name);
+	printf("%d\n", val);
+	return (0);
 }

@@ -6,14 +6,14 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:49:39 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/27 16:00:43 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:49:30 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // used to merge strings but append '\0' to dest
-size_t	strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;

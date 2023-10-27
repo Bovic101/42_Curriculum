@@ -6,14 +6,14 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:05 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/27 17:12:17 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/27 19:16:43 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // Locate a sunstring in the string
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
