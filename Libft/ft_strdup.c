@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 23:58:49 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/28 02:32:57 by vodebunm         ###   ########.fr       */
+/*   Created: 2023/10/28 01:59:49 by vodebunm          #+#    #+#             */
+/*   Updated: 2023/10/28 02:52:42 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+// allocate sufficient memory for a copy of the string
+char	*ft_strdup(const char *s1)
 {
-	void	*p;
-	size_t	value;
+	char	*ptr;
+	size_t	len_s1;
 
-	value = count * size;
-	p = malloc(value);
-	if (!p)
+	if (!s1)
 	{
 		return (NULL);
 	}
-	ft_bzero(p, value);
-	return (p);
+	len_s1 = ft_strlen(s1) + 1;
+	ptr = malloc(len_s1 * sizeof(char));
+	if (!ptr)
+	{
+		return (NULL);
+	}
+	ft_memcpy(ptr, s1, len_s1 - 1);
+	ptr[len_s1 - 1] = '\0';
+	return (ptr);
 }
