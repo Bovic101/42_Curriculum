@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:35:30 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/27 23:42:22 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/29 23:59:38 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,29 @@
 // Convert the intial part of a string pointed by a variable to integer
 int	ft_atoi(const char *str)
 {
-	int	result;
-	int	sign;
 	int	i;
+	int	sign;
+	int	result;
 
-	result = 0;
-	sign = 1;
 	i = 0;
+	sign = 1;
+	result = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
 	}
-	if (str[0] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+		{
+			sign *= -1;
+		}
 		i++;
 	}
-	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = result * 10 + str[i] - '0';
+		result = (str[i] - '0') + (result * 10);
 		i++;
 	}
-	return (sign * result);
+	return (result * sign);
 }

@@ -6,32 +6,36 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 03:02:16 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/29 18:36:39 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/30 01:10:57 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//used to extract a substring from a string
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
-	char	*sub;
+	size_t	size;
+	char	*s2;
 
-	sub = (char *)malloc(sizeof(*s) * (len + 1));
-	if (sub == 0)
+	if (s == NULL)
+		return (NULL);
+	size = ft_strlen(s);
+	if (len >= size)
+		len = size;
+	s2 = (char *) malloc(sizeof(char) * len + 1);
+	if (!s2)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	if (start < ft_strlen(s))
 	{
-		if (i >= start && j < len)
+		while (i < len)
 		{
-			sub[j] = s[i];
-			j++;
+			s2[i] = s[start];
+			start++;
+			i++;
 		}
-		i++;
 	}
-	sub[j] = 0;
-	return (sub);
+	s2[i] = '\0';
+	return (s2);
 }

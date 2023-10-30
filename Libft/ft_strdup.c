@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 01:59:49 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/28 02:52:42 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/30 00:30:48 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,11 @@ char	*ft_strdup(const char *s1)
 	char	*ptr;
 	size_t	len_s1;
 
-	if (!s1)
-	{
-		return (NULL);
-	}
 	len_s1 = ft_strlen(s1) + 1;
 	ptr = malloc(len_s1 * sizeof(char));
 	if (!ptr)
 	{
-		return (NULL);
+		return (0);
 	}
 	ft_memcpy(ptr, s1, len_s1 - 1);
 	ptr[len_s1 - 1] = '\0';

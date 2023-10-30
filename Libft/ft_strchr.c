@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:52:20 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/25 21:13:26 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/29 23:37:00 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char	*str;
+
+	str = (char *)s;
+	while (*str != (char)c && *str)
 	{
-		if (*s == c)
-		{
-			return ((char *)s);
-		}
-		s++;
+		str++;
 	}
-	if (c == '\0')
+	if (*str == (char)c)
 	{
-		return ((char *)s);
+		return (str);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 02:44:44 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/25 17:33:46 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/30 00:27:35 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*d;
 	const char	*s;
 
-	if (!dest || !src)
+	if (!dest && !src)
 	{
 		return (dest);
 	}

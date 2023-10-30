@@ -6,13 +6,13 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:05 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/27 19:16:43 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/10/30 01:34:39 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Locate a sunstring in the string
+// Locate a substring in the string
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (little == NULL || little[0] == '\0')
+	if (ft_strlen(little) == 0)
 		return ((char *)big);
 	while (big[i] != '\0' && i < len)
 	{
