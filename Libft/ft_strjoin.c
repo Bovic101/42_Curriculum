@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 03:02:16 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/30 14:44:22 by vodebunm         ###   ########.fr       */
+/*   Created: 2023/10/30 13:12:31 by vodebunm          #+#    #+#             */
+/*   Updated: 2023/10/30 14:27:03 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//used to extract a substring from a string
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	size;
-	char	*s2;
 
-	if (s == NULL)
-		return (NULL);
-	size = ft_strlen(s);
-	if (len >= size)
-		len = size;
-	s2 = (char *) malloc(sizeof(char) * len + 1);
-	if (!s2)
-		return (NULL);
-	i = 0;
-	if (start < size)
+// Function that return a new str as a result of merge of str1 and str2
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		len1;
+	int		len2;
+	int		total_length;
+	char	*s3;
+
+	if (s1 == NULL || s2 == NULL)
 	{
-		while (i < len)
-		{
-			s2[i] = s[start];
-			start++;
-			i++;
-		}
+		return (NULL);
 	}
-	s2[i] = '\0';
-	return (s2);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	total_length = len1 + len2;
+	s3 = (char *)malloc(total_length + 1);
+	if (s3)
+	{
+		strcpy(s3, s1);
+		strcat(s3, s2);
+	}
+	return (s3);
 }
