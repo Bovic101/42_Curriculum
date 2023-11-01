@@ -6,25 +6,25 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:32:53 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/11/01 15:40:16 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:55:12 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-//Free the memory of allocated array of strings after split
-static void	ft_freeup(char *s)
+//Free memory of allocated array of strings after split
+static void	ft_freeup(char **s)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i] != NULL)
 	{
-		free(s);
+		free(s[i]);
 		i++;
 	}
 	free(s);
 }
-//Function count the number of substringwords in the input string
+////Function count the number of substringwords in the input string
 
 static int	ft_subwordcount(char *str, char c)
 {
@@ -63,12 +63,13 @@ static void	ft_strcpy(char *dest, char *str, char c, int j)
 	}
 	dest[i] = '\0';
 }
-//The function allocates memory for a word from the input str using arg char c
+// Function allocates memory for a word from the input str using arg char c
 
 static char	*ft_alloc(char *str, char c, int *input)
 {
 	char	*word;
 	int		i;
+	int		word_length;
 
 	i = *input;
 	word = NULL;
@@ -76,18 +77,23 @@ static char	*ft_alloc(char *str, char c, int *input)
 	{
 		if (str[*input] != c)
 		{
+			word_length = 0;
 			while (str[*input] != '\0' && str[*input] != c)
-				*input += 1;
-			word = (char *)malloc(sizeof(char) * (*input + 1));
+			{
+				word_length++;
+				(*input)++;
+			}
+			word = (char *)malloc(sizeof(char) * (word_length + 1));
 			if (word == NULL)
 				return (NULL);
-			break ;
+			ft_strcpy(word, str, c, i);
+			return (word);
 		}
-		*input += 1;
+		(*input)++;
 	}
-	ft_strcpy (word, str, c, i);
 	return (word);
 }
+
 //Function that split the input str to array of words using the delimiter char c
 
 char	**ft_split(char const *str, char c)
@@ -97,11 +103,9 @@ char	**ft_split(char const *str, char c)
 	int		j;
 	int		pos;
 
-	if (str == NULL)
-		return (NULL);
 	i = 0;
-	pos = 0;
 	j = ft_subwordcount((char *)str, c);
+	pos = 0;
 	split = (char **)malloc(sizeof(char *) * (j + 1));
 	if (split == NULL)
 		return (NULL);
@@ -111,7 +115,8 @@ char	**ft_split(char const *str, char c)
 		split[i] = ft_alloc(((char *)str), c, &pos);
 		if (split[i] == NULL)
 		{
-			ft_freeup(split[i]);
+			ft_freeup(split);
+			return (NULL);
 		}
 		i++;
 	}

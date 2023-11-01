@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:36:01 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/10/30 16:43:12 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:11:03 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
-	size_t	end ;
+	size_t	end;
 	size_t	new_len;
 	char	*s2_trim;
 
@@ -26,11 +26,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]) != NULL)
 		start++;
-	while (end >= start && ft_strchr(set, s1[end]) != NULL)
-	{
+	while (end > start && ft_strchr(set, s1[end - 1]) != NULL)
 		end--;
-	}
-	new_len = end - start + 1;
+	new_len = end - start;
 	s2_trim = (char *)malloc(new_len + 1);
 	if (s2_trim == NULL)
 	{
