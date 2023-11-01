@@ -6,7 +6,7 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2023/11/01 13:04:04 by vodebunm         ###   ########.fr        #
+#    Updated: 2023/11/01 14:05:18 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
 			ft_strrchr.c ft_substr.c ft_tolower.c ft_toupper.c ft_strjoin.c \
 			ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-			ft_strmapi.c\
+			ft_strmapi.c ft_striteri.c ft_itoa.c \
 			
 
 OBJS	=	$(SRCS:%.c=%.o)
