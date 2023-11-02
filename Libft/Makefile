@@ -6,7 +6,7 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2023/11/02 00:46:36 by vodebunm         ###   ########.fr        #
+#    Updated: 2023/11/02 18:07:43 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,17 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 			ft_strmapi.c ft_striteri.c ft_itoa.c ft_split.c \
 			
+BONUS 	= ft_lstnew.c \
 
 OBJS	=	$(SRCS:%.c=%.o)
+
+OBJSBONUS = ${BONUS:%.c=%.o}
 
 CC 		=	cc
 
 FLAGS	= -Wall -Wextra -Werror
+
+RM 		= rm -f
 
 all: $(NAME)
 
