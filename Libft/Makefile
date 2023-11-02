@@ -6,7 +6,7 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2023/11/01 14:33:42 by vodebunm         ###   ########.fr        #
+#    Updated: 2023/11/02 00:46:36 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,15 +23,17 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 
 OBJS	=	$(SRCS:%.c=%.o)
 
-CC 		=	gcc
+CC 		=	cc
 
 FLAGS	= -Wall -Wextra -Werror
+
+all: $(NAME)
 
 $(NAME):
 		gcc $(FLAGS) -c $(SRCS) -I./
 		ar rc $(NAME) $(OBJS)
 
-all: $(NAME)
+
 
 clean:
 		rm -f $(OBJS)
