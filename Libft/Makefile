@@ -6,7 +6,7 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2023/11/02 19:26:42 by vodebunm         ###   ########.fr        #
+#    Updated: 2023/11/03 00:16:29 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS	=	$(SRCS:%.c=%.o)
 
 OBJSBONUS = ${BONUSSRC:%.c=%.o}
 
-CC 		=	cc
+CC 		=	gcc
 
 FLAGS	= -Wall -Wextra -Werror
 
@@ -35,7 +35,7 @@ RM 		= rm -f
 all: $(NAME)
 
 $(NAME):
-		gcc $(FLAGS) -c $(SRCS) -I./
+		cc $(FLAGS) -c $(SRCS) -I./
 		ar rc $(NAME) $(OBJS)
 
 bonus : $(OBJS) $(OBJSBONUS)
