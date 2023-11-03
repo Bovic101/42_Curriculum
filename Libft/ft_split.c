@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:32:53 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/11/01 18:55:12 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:51:53 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 //Free memory of allocated array of strings after split
 static void	ft_freeup(char **s)
 {

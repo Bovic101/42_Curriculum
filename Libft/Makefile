@@ -6,13 +6,16 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2023/11/03 15:12:35 by vodebunm         ###   ########.fr        #
+#    Updated: 2023/11/03 18:46:21 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	libft.a
 
-SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
+# Library Name
+NAME = libft.a
+
+# List of source files
+SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
 			ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c \
 			ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
@@ -20,33 +23,37 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 			ft_strmapi.c ft_striteri.c ft_itoa.c ft_split.c \
 			
-BONUSSRC 	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+OBJS = $(SRCS:.c=.o)
 
-OBJS	=	$(SRCS:%.c=%.o)
+#List of Bonus file
+BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 
-OBJSBONUS = ${BONUSSRC:%.c=%.o}
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-CC 		=	gcc
-
-FLAGS	= -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 RM 		= rm -f
 
+# All Rules
+# Rule to make the library
 all: $(NAME)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-$(NAME):
-		cc $(FLAGS) -c $(SRCS) -I./
-		ar rc $(NAME) $(OBJS)
-
-bonus : $(OBJS) $(OBJSBONUS)
-		ar rc $(NAME) $(OBJS) $(OBJSBONUS)
+bonus: $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 
 clean:
-		rm -f $(OBJS) $(OBJSBONUS)
+	rm -f $(OBJS) 
+	rm -f $(BONUS_OBJS)
 
-fclean:	clean
-		rm -f $(NAME) 
+# Rule to clean everything
+fclean: 
+	$(MAKE) clean
+	rm -f $(NAME)
 
+# Rule to recompile
 re: fclean all
 
-.PHONY: all clean fclean re
+# Phony targets
+.PHONY: all clean fclean re bonus

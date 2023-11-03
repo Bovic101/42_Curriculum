@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:56:20 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/11/01 12:09:07 by vodebunm         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:23:40 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 //Function that output a single character  of the string to the standard output
 void	ft_putstr_fd(char *s, int fd)
 {
